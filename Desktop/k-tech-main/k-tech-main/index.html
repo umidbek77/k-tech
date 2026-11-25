@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>K-TECH dasturiy yechimlar</title>
+<meta name="description" content="K-TECH (Kharezmi-Tech MCHJ) biznes va davlat tashkilotlari uchun boshqaruv, billing va tahlil tizimlari, veb, mobil, desktop ilovalar va Telegram botlar ishlab chiqadi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@400;500;600&family=Golos+Text:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<a class="skip" href="#main" data-i18n="skip">Asosiy kontentga o‘tish</a>
+
+<!-- ===================== HEADER ===================== -->
+<header class="hdr" id="hdr">
+  <span class="prog" id="prog" aria-hidden="true"></span>
+  <div class="wrap hdr-in">
+    <a class="logo" href="#home" aria-label="K-TECH">
+      <svg class="logo-m" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><g class="lg-star"><path d="M20 20L20.00 1.00L25.57 6.56Z" fill="#5396ec"/><path d="M20 20L25.57 6.56L33.44 6.56Z" fill="#2c5db5"/><path d="M20 20L33.44 6.56L33.44 14.43Z" fill="#3d75cc"/><path d="M20 20L33.44 14.43L39.00 20.00Z" fill="#163c95"/><path d="M20 20L39.00 20.00L33.44 25.57Z" fill="#2a59b1"/><path d="M20 20L33.44 25.57L33.44 33.44Z" fill="#0a2983"/><path d="M20 20L33.44 33.44L25.57 33.44Z" fill="#2552ab"/><path d="M20 20L25.57 33.44L20.00 39.00Z" fill="#0e2f89"/><path d="M20 20L20.00 39.00L14.43 33.44Z" fill="#3265bd"/><path d="M20 20L14.43 33.44L6.56 33.44Z" fill="#214ca4"/><path d="M20 20L6.56 33.44L6.56 25.57Z" fill="#4886dd"/><path d="M20 20L6.56 25.57L1.00 20.00Z" fill="#376dc4"/><path d="M20 20L1.00 20.00L6.56 14.43Z" fill="#5ba3f8"/><path d="M20 20L6.56 14.43L6.56 6.56Z" fill="#4480d6"/><path d="M20 20L6.56 6.56L14.43 6.56Z" fill="#5fa9fe"/><path d="M20 20L14.43 6.56L20.00 1.00Z" fill="#3f79d0"/></g><polygon points="28.87,23.67 23.67,28.87 16.33,28.87 11.13,23.67 11.13,16.33 16.33,11.13 23.67,11.13 28.87,16.33" fill="#1257e6" stroke="#9cc8ff" stroke-opacity=".55" stroke-width=".8"/><path d="M16.6 14.3v11.4M16.6 20.5l6.4-6.2M19 18.4l4.6 7.3" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="logo-t">K-TECH<small>Innovative Software Solutions</small></span>
+    </a>
+
+    <nav class="nav" id="nav" data-i18n-aria="nav.label" aria-label="Asosiy menyu">
+      <a href="#home" data-route="home" data-i18n="nav.home">Bosh sahifa</a>
+      <a href="#company" data-route="company" data-i18n="nav.company">Kompaniya</a>
+      <a href="#services" data-route="services" data-i18n="nav.services">Xizmatlar</a>
+      <a href="#products" data-route="products" data-i18n="nav.products">Mahsulotlar</a>
+      <a href="#contact" data-route="contact" data-i18n="nav.contact">Aloqa</a>
+    </nav>
+
+    <div class="tools">
+      <div class="lang" id="lang">
+        <button type="button" class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false" data-i18n-aria="lang.label" aria-label="Tilni tanlash">
+          <span class="ic" data-ic="globe" data-size="18"></span>
+          <span class="flag" id="langFlag"></span>
+          <span class="ic lang-chev" data-ic="chevron-down" data-size="14"></span>
+        </button>
+        <ul class="lang-menu" id="langMenu" role="listbox" hidden></ul>
+      </div>
+      <button type="button" class="icon-btn" id="themeBtn" data-i18n-aria="theme" aria-label="Tungi rejim">
+        <span class="ic i-sun" data-ic="sun" data-size="18"></span>
+        <span class="ic i-moon" data-ic="moon" data-size="18"></span>
+      </button>
+      <a class="btn btn-p hdr-cta" href="#contact" data-i18n="cta.short">Bog‘lanish</a>
+      <button type="button" class="icon-btn burger" id="burger" data-i18n-aria="menu" aria-label="Menyu" aria-expanded="false" aria-controls="nav"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden>
+  <span class="ic" id="toastIc"></span>
+  <span id="toastText"></span>
+</div>
+
+<main id="main">
+
+<!-- ===================== HOME ===================== -->
+<section class="page" data-page="home">
+
+  <div class="hero">
+    <div class="hero-media"><img src="assets/img/hero.webp" alt="" width="1775" height="886" data-par="0.12"></div>
+    <div class="hero-veil"></div>
+    <div class="wrap hero-in">
+      <div class="hero-c">
+        <h1 class="hero-h"><span class="ln"><span data-i18n="hero.h1a">Algoritm vatanida yaratilgan</span></span><span class="ln"><span data-i18n="hero.h1b">ishonchli dasturiy tizimlar</span></span></h1>
+        <p class="hero-p" data-i18n="hero.sub">Boshqaruv, billing va tahlil tizimlari, veb, mobil va desktop ilovalarni bitta jamoa tahlildan to qo‘llab-quvvatlashgacha olib boradi. 30 dan ortiq muhandisimiz yaratgan mahsulotlar O‘zbekistonda va xorijda har kuni ishlamoqda.</p>
+        <div class="hero-a">
+          <a class="btn btn-p btn-l" href="#contact" data-i18n="cta.discuss">Loyihani muhokama qilish</a>
+          <a class="btn btn-s btn-l" href="#products" data-i18n="cta.products">Mahsulotlarni ko‘rish</a>
+        </div>
+        <ul class="hero-t">
+          <li><span class="ic" data-ic="circle-check" data-size="18"></span><span data-i18n="hero.t1">To‘liq jamoa: tahlilchi, dizayner, dasturchi, QA</span></li>
+          <li><span class="ic" data-ic="circle-check" data-size="18"></span><span data-i18n="hero.t2">O‘zbek, rus va ingliz tillarida</span></li>
+          <li><span class="ic" data-ic="circle-check" data-size="18"></span><span data-i18n="hero.t3">Davlat va xususiy sektor tajribasi</span></li>
+          <li><span class="pulse" aria-hidden="true"></span><span data-i18n="hero.ey">10+ tizim har kuni ishlamoqda</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <dl class="facts">
+      <div><span class="ic fact-ic" data-ic="boxes" data-size="22"></span><div><dt>10+</dt><dd data-i18n="fact.1">ishlab turgan tizim va mahsulot</dd></div></div>
+      <div><span class="ic fact-ic" data-ic="users" data-size="22"></span><div><dt>30+</dt><dd data-i18n="fact.2">jamoadagi mutaxassis</dd></div></div>
+      <div><span class="ic fact-ic" data-ic="layers" data-size="22"></span><div><dt>6</dt><dd data-i18n="fact.3">platforma: veb, Android, iOS, desktop, Telegram, IoT</dd></div></div>
+      <div><span class="ic fact-ic" data-ic="map-pin" data-size="22"></span><div><dt data-i18n="fact.4v">Urganch</dt><dd data-i18n="fact.4">bosh ofis. Xorazmdan O‘zbekiston va xorij bozoriga</dd></div></div>
+    </dl>
+  </div>
+
+  <div class="sec wrap">
+    <div class="sec-h rv">
+      <h2 data-i18n="home.sv.h">Nimalar qilamiz</h2>
+      <p data-i18n="home.sv.p">G‘oyadan ishga tushirishgacha, keyin esa qo‘llab-quvvatlashgacha bitta jamoa javob beradi.</p>
+    </div>
+    <div class="svl" id="homeServices"></div>
+    <p class="more"><a class="lnk" href="#services" data-i18n="home.sv.more">Xizmatlar haqida batafsil</a></p>
+  </div>
+
+  <div class="sec sec-soft">
+    <div class="wrap">
+      <div class="sec-h sec-h-row rv">
+        <div>
+          <h2 data-i18n="home.pr.h">Ishlab turgan mahsulotlar</h2>
+          <p data-i18n="home.pr.p">Har biri bugun haqiqiy mijozlarda, haqiqiy yuklama ostida ishlayapti.</p>
+        </div>
+        <a class="btn btn-s" href="#products" data-i18n="home.pr.more">Barcha mahsulotlar</a>
+      </div>
+      <div class="pgrid" id="homeProducts"></div>
+    </div>
+  </div>
+
+  <div class="sec wrap">
+    <div class="sec-h rv">
+      <h2 data-i18n="home.au.h">Kimlar uchun ishlaymiz</h2>
+      <p data-i18n="home.au.p">Uch xil buyurtmachi, bitta talab: tizim har kuni to‘xtovsiz ishlashi kerak.</p>
+    </div>
+    <div class="aud" id="audience"></div>
+  </div>
+
+  <div class="sec sec-soft">
+    <div class="wrap proc-sec">
+      <div class="proc-l">
+        <div class="sec-h">
+          <h2 data-i18n="home.pc.h">Qanday ishlaymiz</h2>
+          <p data-i18n="home.pc.p">Har bir bosqichda natija ko‘rinadi: hujjat, maket, ishlaydigan versiya. Loyiha qayerda turganini doim bilasiz, keyingi qadam esa oldindan kelishiladi. Shu tartib muddat va byudjetni nazoratda ushlab turadi, kutilmagan holatlarni esa erta ko‘rsatadi.</p>
+        </div>
+        <figure class="proc-fig"><img src="assets/img/process.webp" alt="" width="1672" height="941" loading="lazy"></figure>
+      </div>
+      <ol class="proc" id="process"></ol>
+    </div>
+  </div>
+
+  <div class="her">
+    <canvas class="her-cv" id="herCv" aria-hidden="true"></canvas>
+    <div class="wrap her-in">
+      <p class="her-y" aria-hidden="true">≈ 780</p>
+      <div class="her-t">
+        <h2 data-i18n="her.h">Algoritm so‘zi Xorazmiy nomidan olingan</h2>
+        <p data-i18n="her.p">IX asrda xorazmlik olim Muhammad al-Xorazmiy hisoblash qoidalarini tartibga soldi. Uning lotincha nomi Algoritmi bugun har bir dasturning asosidagi tushunchaga aylandi. Kompaniyamiz shu zaminda ishlaydi va shu nomni olib yuradi.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <ol class="her-tl">
+        <li><b>≈ 780</b><span data-i18n="her.t1">Muhammad al-Xorazmiy Xorazmda tug‘ildi</span></li>
+        <li><b>≈ 820</b><span data-i18n="her.t2">«Al-jabr» asarini yozdi. Algebra atamasi shu kitob nomidan olingan</span></li>
+        <li><b data-i18n="her.t3v">XII asr</b><span data-i18n="her.t3">Asarlari lotin tiliga tarjima qilindi va olimning nomi Algoritmi shaklida Yevropaga tarqaldi</span></li>
+        <li><b data-i18n="her.t4v">Bugun</b><span data-i18n="her.t4">Shu zaminda o‘sgan muhandislar dunyo bozori uchun dasturiy mahsulotlar yaratmoqda</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="sec-cta wrap">
+    <div class="cta rv">
+      <div>
+        <h2 data-i18n="cta.h">Loyihangiz haqida gaplashamiz</h2>
+        <p data-i18n="cta.p">Vazifani qisqacha yozing. Tahlilchimiz siz bilan bog‘lanib, keyingi qadamni taklif qiladi.</p>
+      </div>
+      <div class="cta-a">
+        <a class="btn btn-w btn-l" href="#contact" data-i18n="cta.write">So‘rov qoldirish</a>
+        <a class="btn btn-g btn-l" href="tel:+998942391518"><span class="ic" data-ic="phone" data-size="18"></span>+998 94 239 15 18</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COMPANY ===================== -->
+<section class="page" data-page="company" hidden>
+  <div class="co-hero">
+    <div class="wrap co-hero-in">
+      <div class="co-l">
+        <p class="eyebrow"><span class="ic" data-ic="map-pin" data-size="16"></span><span data-i18n="co.ey">Kharezmi-Tech MCHJ · Urganch</span></p>
+        <h1 data-i18n="co.h">Al-Xorazmiy vatanidan dunyo bozoriga</h1>
+        <p class="co-lead" data-i18n="co.p">Kharezmi-Tech Urganchda joylashgan dasturiy ta’minot kompaniyasi. 30 dan ortiq muhandis, tahlilchi va dizayner biznes hamda davlat tashkilotlarida har kuni ishlaydigan tizimlarni yaratadi, mahsulotlarimiz esa xorijga eksport qilinadi.</p>
+        <div class="co-txt">
+          <p data-i18n="co.t1">Boshqaruv, billing, tahlil va aloqa tizimlarini to‘liq sikl bo‘yicha ishlab chiqamiz: tahlil va loyihalashdan tortib ishga tushirish va uzoq muddatli qo‘llab-quvvatlashgacha. Veb, mobil, desktop, Telegram va IoT yechimlari bitta jamoa ichida yaratiladi.</p>
+          <p data-i18n="co.t2">Har bir loyiha buyurtmachining jarayonlarini chuqur o‘rganishdan boshlanadi. Tahlilchi talablarni aniqlaydi, loyiha menejeri muddat va tarkibni belgilaydi, jamoa esa natijani shaffof bosqichlarda topshiradi.</p>
+          <p data-i18n="co.t3">O‘z mahsulotlarimizni ham yillar davomida shu tartibda yuritamiz. Shu bois tizim ishga tushgandan keyin nima kerakligini tajribadan bilamiz: monitoring, yangilanishlar va foydalanuvchilarni o‘qitish.</p>
+        </div>
+        <div class="co-a">
+          <a class="btn btn-p btn-l" href="#contact" data-i18n="cta.discuss">Loyihani muhokama qilish</a>
+          <a class="btn btn-s btn-l" href="#products" data-i18n="cta.products">Mahsulotlarni ko‘rish</a>
+        </div>
+      </div>
+      <div class="co-r">
+        <figure class="co-fig"><img src="assets/img/img.png" alt="" width="1536" height="1024" data-par="0.06"></figure>
+        <div class="co-card rv">
+          <h2 data-i18n="co.ab.h">Biz kimmiz</h2>
+          <p data-i18n="co.ab.p">«Algoritm» so‘zini dunyoga bergan zaminning bugungi muhandislari.</p>
+          <dl class="co-nums">
+            <div><dt>10+</dt><dd data-i18n="fact.1">ishlab turgan tizim va mahsulot</dd></div>
+            <div><dt>30+</dt><dd data-i18n="fact.2">jamoadagi mutaxassis</dd></div>
+            <div><dt>6</dt><dd data-i18n="co.n3">platforma</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="her her-co">
+    <div class="her-bg" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="sec-h">
+        <h2 data-i18n="co.hr.h">Ilm bu zaminning qadimiy an’anasi</h2>
+        <p data-i18n="co.hr.p">Xorazm ming yildan beri aniq fanlar bilan tanilgan. Biz o‘zimizni shu an’ananing davomchisi deb bilamiz va ishimizga ham shunday talab bilan qaraymiz.</p>
+      </div>
+      <div class="hr3">
+        <article><b data-i18n="co.hr.1v">IX asr</b><h3 data-i18n="co.hr.1h">Muhammad al-Xorazmiy</h3><p data-i18n="co.hr.1p">Xorazmda tug‘ilgan olim algebra faniga asos soldi. «Algoritm» so‘zi uning nomidan kelib chiqqan.</p></article>
+        <article><b data-i18n="co.hr.2v">XI asr</b><h3 data-i18n="co.hr.2h">Xorazm Ma’mun akademiyasi</h3><p data-i18n="co.hr.2p">Gurganjdagi ilmiy markazda Abu Rayhon Beruniy va Ibn Sino kabi olimlar birga ishlagan.</p></article>
+        <article><b data-i18n="co.hr.3v">Bugun</b><h3>K-TECH</h3><p data-i18n="co.hr.3p">Shu zaminda o‘sgan muhandislar jamoa bo‘lib dunyo bozori uchun dasturiy mahsulotlar yaratmoqda.</p></article>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec wrap">
+    <div class="sec-h">
+      <h2 data-i18n="co.vl.h">Ishlash tamoyillarimiz</h2>
+    </div>
+    <div class="vals" id="values"></div>
+  </div>
+
+  <div class="sec-tech">
+    <div class="wrap"><h2 class="tech-h" data-i18n="co.tc.h">Ishlatadigan texnologiyalarimiz</h2></div>
+    <div class="marq" aria-hidden="true"><div class="marq-t" id="marq"></div></div>
+  </div>
+
+  <div class="sec sec-soft sec-team">
+    <div class="wrap">
+      <div class="sec-h">
+        <h2 data-i18n="co.tm.h">Jamoa tarkibi</h2>
+        <p data-i18n="co.tm.p">Loyihaga to‘liq jamoa biriktiriladi. Har bir rol o‘z ishi uchun javob beradi.</p>
+      </div>
+      <div class="roles" id="roles"></div>
+
+      <div class="tm">
+        <div class="tm-bar">
+          <h3 data-i18n="co.tm.list">Jamoa a’zolari</h3>
+          <div class="tm-f">
+            <label class="tm-search"><span class="ic" data-ic="search" data-size="18"></span><span class="sr" data-i18n="tm.search">Ism yoki familiya bo‘yicha qidirish</span><input type="search" id="tmSearch" data-i18n-ph="tm.search" placeholder="Ism yoki familiya bo‘yicha qidirish" autocomplete="off"></label>
+            <label class="tm-sel"><span class="sr" data-i18n="tm.pos">Lavozim</span><select id="tmRole"></select></label>
+          </div>
+        </div>
+        <div class="tm-tbl" role="table" data-i18n-aria="co.tm.list" aria-label="Jamoa a’zolari">
+          <div class="tm-head" role="row">
+            <span role="columnheader" data-i18n="tm.c1">Xodim</span>
+            <span role="columnheader" data-i18n="tm.pos">Lavozim</span>
+            <span role="columnheader" data-i18n="tm.c3">Daraja</span>
+            <span role="columnheader" data-i18n="tm.c4">Yo‘nalishi</span>
+          </div>
+          <div class="tm-body" id="tmBody"></div>
+        </div>
+        <div class="tm-foot">
+          <span class="tm-count" id="tmCount"></span>
+          <div class="pg" id="tmPages"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec wrap">
+    <div class="sec-h">
+      <h2 data-i18n="co.rq.h">Rekvizitlar</h2>
+    </div>
+    <dl class="req" id="req"></dl>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="page" data-page="services" hidden>
+  <div class="ph">
+    <div class="wrap ph-in">
+      <h1 data-i18n="sv.h">Xizmatlar</h1>
+      <p data-i18n="sv.p">Tizimni noldan quramiz, mavjudini yangilaymiz yoki boshqa tizimlar bilan bog‘laymiz. Quyida har bir yo‘nalishga nimalar kirishi yozilgan.</p>
+    </div>
+  </div>
+  <div class="wrap sec-t">
+    <div class="svd" id="servicesFull"></div>
+  </div>
+  <div class="sec sec-soft">
+    <div class="wrap stack-sec">
+      <div class="sec-h">
+        <h2 data-i18n="sv.st.h">Texnologiyalar</h2>
+        <p data-i18n="sv.st.p">Vazifaga qarab tanlaymiz. Asosiy to‘plam quyidagicha.</p>
+      </div>
+      <dl class="stack" id="stack"></dl>
+    </div>
+  </div>
+  <div class="sec-cta wrap">
+    <div class="cta">
+      <div>
+        <h2 data-i18n="sv.cta.h">Qaysi yo‘nalish sizga mos kelishini bilmayapsizmi?</h2>
+        <p data-i18n="sv.cta.p">Muammoni o‘z so‘zlaringiz bilan yozing. Yechim variantlarini biz taklif qilamiz.</p>
+      </div>
+      <div class="cta-a">
+        <a class="btn btn-w btn-l" href="#contact" data-i18n="cta.write">So‘rov qoldirish</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRODUCTS ===================== -->
+<section class="page" data-page="products" hidden>
+  <div class="ph">
+    <div class="wrap ph-in">
+      <h1 data-i18n="pr.h">Mahsulotlar va tizimlar</h1>
+      <p data-i18n="pr.p">O‘zimiz ishlab chiqqan va bugun foydalanishda bo‘lgan mahsulotlar. Ular veb-saytlarda, Play Marketda va Telegramda mavjud.</p>
+    </div>
+  </div>
+  <div class="wrap sec-t">
+    <div class="tabs" id="filters" role="group" data-i18n-aria="pr.tabs" aria-label="Platforma bo‘yicha saralash"></div>
+    <div class="plist" id="productList"></div>
+    <p class="note" data-i18n="pr.note">Buyurtma asosida qurilgan ayrim tizimlar mijoz bilan kelishuvga ko‘ra bu ro‘yxatga kiritilmagan.</p>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="page" data-page="contact" hidden>
+  <div class="ph">
+    <div class="wrap ph-in">
+      <h1 data-i18n="ct.h">Aloqa</h1>
+      <p data-i18n="ct.p">Loyiha, hamkorlik yoki mahsulotlarimiz bo‘yicha savolingizni yozing.</p>
+    </div>
+  </div>
+
+  <div class="wrap sec-t ct-grid">
+    <form class="form" id="form" novalidate>
+      <div class="fld">
+        <label for="f-name" data-i18n="f.name">Ismingiz</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="fld">
+        <label for="f-org" data-i18n="f.org">Tashkilot</label>
+        <input id="f-org" name="org" type="text" autocomplete="organization">
+      </div>
+      <div class="fld">
+        <label for="f-tel" data-i18n="f.tel">Telefon yoki Telegram</label>
+        <input id="f-tel" name="tel" type="text" autocomplete="tel" required placeholder="+998">
+      </div>
+      <div class="fld">
+        <label for="f-type" data-i18n="f.type">Yo‘nalish</label>
+        <select id="f-type" name="type"></select>
+      </div>
+      <div class="fld fld-w">
+        <label for="f-msg" data-i18n="f.msg">Vazifa haqida qisqacha</label>
+        <textarea id="f-msg" name="msg" rows="5" required></textarea>
+      </div>
+      <div class="fld-w f-act">
+        <button class="btn btn-p btn-l" type="submit" id="f-submit" data-i18n="f.send">So‘rov yuborish</button>
+        <p class="f-err" id="f-err" role="alert" hidden data-i18n="f.err">Ism, aloqa ma’lumoti va vazifa tavsifini to‘ldiring.</p>
+      </div>
+    </form>
+
+    <aside class="ct-info">
+      <dl>
+        <div><span class="ic fact-ic" data-ic="phone" data-size="20"></span><div><dt data-i18n="ct.tel">Telefon</dt><dd><a href="tel:+998942391518">+998 94 239 15 18</a></dd></div></div>
+        <div><span class="ic fact-ic" data-ic="mail" data-size="20"></span><div><dt data-i18n="ct.mail">Elektron pochta</dt><dd><a href="mailto:info@k-tech.uz">info@k-tech.uz</a></dd></div></div>
+        <div><span class="ic fact-ic" data-ic="map-pin" data-size="20"></span><div><dt data-i18n="ct.addr">Manzil</dt><dd><span data-i18n="addr">O‘zbekiston, Xorazm viloyati, Urganch shahri, Tinchlik ko‘chasi, 6</span></dd></div></div>
+      </dl>
+      <div class="ct-map rv">
+        <iframe src="https://www.google.com/maps?q=41.55842756737378,60.62189104453171&amp;z=16&amp;hl=uz&amp;output=embed" title="Kharezmi-Tech, Tinchlik 6, Urganch" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <span class="ct-map-tag"><span class="ic" data-ic="map-pin" data-size="16"></span>K-TECH · Tinchlik 6</span>
+      </div>
+      <div class="ct-soc">
+        <p data-i18n="ct.soc">Ijtimoiy tarmoqlar</p>
+        <div class="soc" data-soc></div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="ftr">
+  <div class="wrap ftr-in">
+    <div class="ftr-b">
+      <a class="logo logo-inv" href="#home" aria-label="K-TECH">
+        <svg class="logo-m" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true"><g class="lg-star"><path d="M20 20L20.00 1.00L25.57 6.56Z" fill="#5396ec"/><path d="M20 20L25.57 6.56L33.44 6.56Z" fill="#2c5db5"/><path d="M20 20L33.44 6.56L33.44 14.43Z" fill="#3d75cc"/><path d="M20 20L33.44 14.43L39.00 20.00Z" fill="#163c95"/><path d="M20 20L39.00 20.00L33.44 25.57Z" fill="#2a59b1"/><path d="M20 20L33.44 25.57L33.44 33.44Z" fill="#0a2983"/><path d="M20 20L33.44 33.44L25.57 33.44Z" fill="#2552ab"/><path d="M20 20L25.57 33.44L20.00 39.00Z" fill="#0e2f89"/><path d="M20 20L20.00 39.00L14.43 33.44Z" fill="#3265bd"/><path d="M20 20L14.43 33.44L6.56 33.44Z" fill="#214ca4"/><path d="M20 20L6.56 33.44L6.56 25.57Z" fill="#4886dd"/><path d="M20 20L6.56 25.57L1.00 20.00Z" fill="#376dc4"/><path d="M20 20L1.00 20.00L6.56 14.43Z" fill="#5ba3f8"/><path d="M20 20L6.56 14.43L6.56 6.56Z" fill="#4480d6"/><path d="M20 20L6.56 6.56L14.43 6.56Z" fill="#5fa9fe"/><path d="M20 20L14.43 6.56L20.00 1.00Z" fill="#3f79d0"/></g><polygon points="28.87,23.67 23.67,28.87 16.33,28.87 11.13,23.67 11.13,16.33 16.33,11.13 23.67,11.13 28.87,16.33" fill="#1257e6" stroke="#9cc8ff" stroke-opacity=".55" stroke-width=".8"/><path d="M16.6 14.3v11.4M16.6 20.5l6.4-6.2M19 18.4l4.6 7.3" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="logo-t">K-TECH<small>Innovative Software Solutions</small></span>
+      </a>
+      <p data-i18n="ft.about">Biznes va davlat tashkilotlari uchun dasturiy tizimlar. Urganch, O‘zbekiston.</p>
+    </div>
+    <nav class="ftr-c" data-i18n-aria="ft.nav" aria-label="Sayt">
+      <h3 data-i18n="ft.nav">Sayt</h3>
+      <a href="#home" data-i18n="nav.home">Bosh sahifa</a>
+      <a href="#company" data-i18n="nav.company">Kompaniya</a>
+      <a href="#services" data-i18n="nav.services">Xizmatlar</a>
+      <a href="#products" data-i18n="nav.products">Mahsulotlar</a>
+      <a href="#contact" data-i18n="nav.contact">Aloqa</a>
+    </nav>
+    <div class="ftr-c">
+      <h3 data-i18n="nav.products">Mahsulotlar</h3>
+      <a href="#products">Insight360</a>
+      <a href="#products">SmartX360</a>
+      <a href="#products">StatInspector-AI</a>
+      <a href="#products">K-Connect</a>
+    </div>
+    <div class="ftr-c">
+      <h3 data-i18n="nav.contact">Aloqa</h3>
+      <a href="tel:+998942391518">+998 94 239 15 18</a>
+      <a href="mailto:info@k-tech.uz">info@k-tech.uz</a>
+      <div class="soc soc-inv" data-soc></div>
+    </div>
+  </div>
+  <div class="wrap ftr-l">
+    <span>© <span id="year">2026</span> <span data-i18n="ft.copy">“Kharezmi-Tech” MCHJ</span></span>
+    <span data-i18n="ft.rights">Barcha huquqlar himoyalangan</span>
+  </div>
+</footer>
+
+<script src="js/icons.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
